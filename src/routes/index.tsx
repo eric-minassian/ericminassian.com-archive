@@ -1,35 +1,56 @@
-import { type VoidComponent } from "solid-js";
-import { A } from "solid-start";
+import { createSignal, Show, type VoidComponent } from "solid-js";
+import PrimaryButton from "~/components/PrimaryButton";
+import darkSVG from "/dark.svg";
+import lightSVG from "/light.svg";
 
 const Home: VoidComponent = () => {
+  const [theme, setTheme] = createSignal("light");
+
   return (
-    <main class="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#026d56] to-[#152a2c]">
-      <div class="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span class="text-[hsl(88, 77%, 78%)]">JD</span> App
-        </h1>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <A
-            class="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://start.solidjs.com"
-            target="_blank"
+    <main class={theme()}>
+      <div class="grid h-screen place-items-center dark:bg-black">
+        <div class="text-center dark:text-white">
+          <button
+            id="colorModeToggle"
+            class="absolute top-10 right-10"
+            onClick={() => {
+              theme() === "light" ? setTheme("dark") : setTheme("light");
+            }}
           >
-            <h3 class="text-2xl font-bold">Solid Start →</h3>
-            <div class="text-lg">
-              Learn more about Solid Start and the basics.
-            </div>
-          </A>
-          <A
-            class="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://github.com/orjdev/create-jd-app"
-            target="_blank"
-          >
-            <h3 class="text-2xl font-bold">JD End →</h3>
-            <div class="text-lg">
-              Learn more about Create JD App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </A>
+            <Show
+              when={theme() === "light"}
+              fallback={<img src={darkSVG} class="h-8 w-8" alt="dark mode" />}
+            >
+              <img src={lightSVG} class="h-8 w-8" alt="light mode" />
+            </Show>
+          </button>
+          <h2 class="font-bold text-4xl my-5">
+            Eric Minassian - Software Engineer @ Walmart
+          </h2>
+
+          <p class="text-lg my-5">
+            Undergraduate student at the UCI studying Computer Science and
+            Business Administration - Finance.
+          </p>
+          <p class="my-5 text-lg">
+            Seeking Fall 2023 & Winter 2024 Software Engineer internships in the
+            US.
+          </p>
+          <div class="grid grid-cols-4 content-center my-5">
+            <PrimaryButton href="mailto:eric@ericminassian.com">
+              Email
+            </PrimaryButton>
+
+            <PrimaryButton href="https://www.linkedin.com/in/minassian-eric/">
+              LinkedIn
+            </PrimaryButton>
+
+            <PrimaryButton href="https://www.github.com/eric-minassian">
+              Github
+            </PrimaryButton>
+
+            <PrimaryButton href="/resume.pdf">Resume</PrimaryButton>
+          </div>
         </div>
       </div>
     </main>
