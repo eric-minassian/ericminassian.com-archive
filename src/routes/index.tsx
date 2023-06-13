@@ -25,7 +25,7 @@ const Home: VoidComponent = () => {
             </Show>
           </button>
           <h2 class="font-bold text-4xl my-5">
-            Eric Minassian - Software Engineer @ Walmart
+            Eric Minassian - Software Engineer Intern @ Walmart
           </h2>
 
           <p class="text-lg my-5">
