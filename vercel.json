@@ -1,5 +1,0 @@
-{
-  "redirects": [
-    { "source": "/resume", "destination": "/resume.pdf", "permanent": true }
-  ]
-}
