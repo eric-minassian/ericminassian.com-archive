@@ -6,16 +6,16 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 
 <Layout title="Blog - Eric Minassian">
   <section>
-    <h1 class="font-semibold text-2xl mb-8 tracking-tighter">
+    <h1 class="mb-8 text-2xl font-semibold tracking-tighter">
       read my thoughts
     </h1>
     <ul>
       {
         allPosts.map((post) => (
           <li>
-            <a class="flex flex-col space-y-1 mb-4" href={post.url}>
-              <div class="w-full flex flex-col">
-                <p class="text-neutral-900 dark:text-neutral-100 tracking-tight">
+            <a class="mb-4 flex flex-col space-y-1" href={post.url}>
+              <div class="flex w-full flex-col">
+                <p class="tracking-tight text-neutral-900 dark:text-neutral-100">
                   {post.frontmatter.title}
                 </p>
                 <p class="text-neutral-600 dark:text-neutral-400">

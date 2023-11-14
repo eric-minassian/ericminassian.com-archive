@@ -1,7 +1,8 @@
 ---
+import type { Frontmatter } from "../types";
 import Layout from "./Layout.astro";
 
-const { frontmatter } = Astro.props;
+const frontmatter = Astro.props.frontmatter as Frontmatter;
 ---
 
 <Layout
