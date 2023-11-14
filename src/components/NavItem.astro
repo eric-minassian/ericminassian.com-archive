@@ -1,0 +1,24 @@
+---
+import clsx from "clsx";
+
+interface Props {
+  name: string;
+  path: string;
+}
+
+const { name, path } = Astro.props;
+---
+
+<a
+  href={path}
+  class={clsx(
+    "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
+    {
+      "text-neutral-500": Astro.url.pathname !== path,
+    }
+  )}
+>
+  <span class="relative py-1 px-2">
+    {name}
+  </span>
+</a>

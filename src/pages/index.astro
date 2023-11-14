@@ -1,32 +1,68 @@
 ---
-import Link from "../components/Link.astro";
+import ArrowIcon from "../components/ArrowIcon.astro";
+import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Eric Minassian - Software Engineer">
-  <main>
-    <div class="grid h-screen place-items-center">
-      <div class="text-center">
-        <h1 class="font-bold text-4xl my-5">
-          Eric Minassian - Software Engineer @ Walmart
-        </h1>
-        <p class="text-lg my-5">
-          Student at the UC Irvine studying Computer Science and Business
-          Administration - Finance
-        </p>
-        <p class="text-lg my-5">Open to Fall & Winter Internships</p>
-        <div class="grid grid-cols-4 content-center my-5">
-          <Link href="mailto:eric@ericminassian.com">Email</Link>
-
-          <Link href="https://www.linkedin.com/in/minassian-eric/">
-            LinkedIn
-          </Link>
-
-          <Link href="https://www.github.com/eric-minassian">Github</Link>
-
-          <Link href="/resume.pdf">Resume</Link>
-        </div>
-      </div>
+<Layout>
+  <section>
+    <h1 class="font-semibold text-2xl mb-8 tracking-tighter">
+      hey, I'm eric 👋
+    </h1>
+    <p class="prose prose-neutral dark:prose-invert">
+      {
+        `I'm a Computer Science + Business Administration student
+      at the  `
+      }
+      <Badge href="https://uci.edu">
+        <img
+          src="/images/uci.svg"
+          alt="UCI"
+          class="!mr-1 w-5 h-5"
+          class="!mr-1"
+        />
+         University of California, Irvine
+      </Badge>
+      {`. I'm currently interning at `}
+      <Badge href="https://tech.walmart.com">
+        <img
+          src="/images/walmart.webp"
+          alt="Walmart Global Tech"
+          class="!mr-1 w-5 h-5"
+        />
+         Walmart Global Tech
+      </Badge>
+      {` as a Software Engineer II.`}
+    </p>
+    <div
+      class="my-8 flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 w-full"
+    >
+      <ul
+        class="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300"
+      >
+        <li>
+          <a
+            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://linkedin.com/in/minassian-eric"
+          >
+            <ArrowIcon />
+            <p class="h-7 ml-2">connect with me</p>
+          </a>
+        </li>
+        <li>
+          <a
+            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="mailto:eric@ericminassian.com"
+          >
+            <ArrowIcon />
+            <p class="h-7 ml-2">contact me</p>
+          </a>
+        </li>
+      </ul>
     </div>
-  </main>
+  </section>
 </Layout>

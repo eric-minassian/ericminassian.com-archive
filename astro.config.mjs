@@ -6,4 +6,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://ericminassian.com",
   integrations: [tailwind(), sitemap()],
+  applyBaseStyles: false,
 });

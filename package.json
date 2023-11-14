@@ -1,7 +1,8 @@
 {
-  "name": "personal-website",
+  "name": "ericminassian.com",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "author": {
     "name": "Eric Minassian",
     "url": "https://ericminassian.com",
@@ -15,9 +16,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.2.2",
-    "tailwindcss": "^3.3.3"
+    "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/tailwind": "^5.0.2",
+    "astro": "^3.5.3",
+    "clsx": "^2.0.0",
+    "tailwindcss": "^3.3.5"
   }
 }
