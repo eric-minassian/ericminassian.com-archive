@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 import UCILogo from "../assets/uci.svg";
 import WalmartLogo from "../assets/walmart.webp";
-import ArrowIcon from "../components/ArrowIcon.astro";
 import Badge from "../components/Badge.astro";
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -18,11 +18,7 @@ import Layout from "../layouts/Layout.astro";
       at the  `
       }
       <Badge href="https://uci.edu">
-        <Image
-          src={UCILogo}
-          alt="UCI Logo"
-          class="!mr-1 w-5 h-5"
-        />
+        <Image src={UCILogo} alt="UCI Logo" class="!mr-1 w-5 h-5" />
          University of California, Irvine
       </Badge>
       {`. I'm currently interning at `}
@@ -43,26 +39,16 @@ import Layout from "../layouts/Layout.astro";
         class="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300"
       >
         <li>
-          <a
-            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://linkedin.com/in/minassian-eric"
-          >
-            <ArrowIcon />
-            <p class="h-7 ml-2">connect with me</p>
-          </a>
+          <Link href="https://linkedin.com/in/minassian-eric">linkedin</Link>
         </li>
         <li>
-          <a
-            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:eric@ericminassian.com"
-          >
-            <ArrowIcon />
-            <p class="h-7 ml-2">contact me</p>
-          </a>
+          <Link href="/resume.pdf">resume</Link>
+        </li>
+        <li>
+          <Link href="https://github.com/eric-minassian">github</Link>
+        </li>
+        <li>
+          <Link href="mailto:eric@ericminassian.com">email</Link>
         </li>
       </ul>
     </div>
