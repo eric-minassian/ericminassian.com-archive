@@ -14,9 +14,9 @@ const { name, href } = Astro.props;
   {...Astro.props}
   href={href}
   class={clsx(
-    "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
+    "transition-all hover:text-neutral-800 dark:hover:text-neutral-100 flex align-middle",
     {
-      "text-neutral-500": Astro.url.pathname !== href,
+      "text-neutral-400": Astro.url.pathname !== href,
     }
   )}
 >
