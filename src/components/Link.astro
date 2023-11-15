@@ -1,4 +1,6 @@
 ---
+import ArrowIcon from "./ArrowIcon.astro";
+
 interface Props {
   href: string;
 }
@@ -7,9 +9,13 @@ const { href } = Astro.props;
 ---
 
 <a
-  class="border-solid border-2 border-black rounded-full mx-2 hover:border-white dark:hover:border-black hover:bg-black hover:text-white"
-  href={href}
+  class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+  rel="noopener noreferrer"
   target="_blank"
+  href={href}
 >
-  <slot />
+  <ArrowIcon />
+  <p class="h-7 ml-2">
+    <slot />
+  </p>
 </a>
